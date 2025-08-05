@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhbsvyf18g3fd"]
+[gd_scene load_steps=4 format=3 uid="uid://bhbsvyf18g3fd"]
 
+[ext_resource type="Script" uid="uid://dqcs3pwtk6ok3" path="res://components/player/player.gd" id="1_kfe3d"]
 [ext_resource type="PackedScene" uid="uid://iwlltlnadug2" path="res://components/player/gun/gun_model.glb" id="1_t3162"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lcrh2"]
 
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_kfe3d")
+camera_sensibility = 0.25
 
 [node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 fov = 90.0
 

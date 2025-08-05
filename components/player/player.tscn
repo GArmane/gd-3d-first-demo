@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhbsvyf18g3fd"]
+
+[ext_resource type="PackedScene" uid="uid://iwlltlnadug2" path="res://components/player/gun/gun_model.glb" id="1_t3162"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lcrh2"]
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+fov = 90.0
+
+[node name="Gun" parent="Camera3D" instance=ExtResource("1_t3162")]
+transform = Transform3D(-0.299589, 0, 0.0157008, 0, 0.3, 0, -0.0157008, 0, -0.299589, 0.3, -0.2, -0.4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00816, 0)
+shape = SubResource("CapsuleShape3D_lcrh2")

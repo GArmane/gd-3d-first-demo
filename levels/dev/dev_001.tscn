@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp7sxe5xl5shk"]
+[gd_scene load_steps=8 format=3 uid="uid://dp7sxe5xl5shk"]
 
 [ext_resource type="Texture2D" uid="uid://bx37puc11e5v1" path="res://levels/dev/checkboard.png" id="1_cig4d"]
+[ext_resource type="Script" uid="uid://cooglapg7dyqd" path="res://levels/dev/dev_001.gd" id="1_wsljj"]
 [ext_resource type="PackedScene" uid="uid://bhbsvyf18g3fd" path="res://components/player/player.tscn" id="2_aoynk"]
 
 [sub_resource type="Environment" id="Environment_pev5d"]
@@ -43,6 +44,7 @@ uv1_triplanar = true
 uv1_triplanar_sharpness = 4.0
 
 [node name="DevLevel" type="Node3D"]
+script = ExtResource("1_wsljj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pev5d")

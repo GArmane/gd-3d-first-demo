@@ -1,11 +1,20 @@
 class_name Player extends CharacterBody3D
 
 
+const BULLED_3D = preload("res://components/bullet/bullet_3d.tscn")
 const GRAVITY := 9.8
 
 @export_range(1.0, 1.0, 0.05) var camera_sensibility := 0.3
 @export_range(1.0, 10.0, 0.5) var movement_speed := 5.0
 @export_range(1.0, 10.0, 0.5) var movement_jump_height := 4.0
+
+
+func _shoot() -> void:
+	var bullet = BULLED_3D.instantiate()
+	%GunBulletSpawnPoint.add_child(bullet)
+	bullet.global_transform = %GunBulletSpawnPoint.global_transform
+	
+	%GunShotTimer.start()
 
 
 func _physics_process(delta: float) -> void:
@@ -22,6 +31,9 @@ func _physics_process(delta: float) -> void:
 	velocity.y -= GRAVITY * delta
 
 	move_and_slide()
+
+	if Input.is_action_pressed("shoot") and %GunShotTimer.is_stopped():
+		_shoot()
 
 
 func _unhandled_input(event: InputEvent) -> void:

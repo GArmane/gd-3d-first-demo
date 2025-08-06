@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhbsvyf18g3fd"]
+[gd_scene load_steps=5 format=3 uid="uid://bhbsvyf18g3fd"]
 
 [ext_resource type="Script" uid="uid://dqcs3pwtk6ok3" path="res://components/player/player.gd" id="1_kfe3d"]
 [ext_resource type="PackedScene" uid="uid://iwlltlnadug2" path="res://components/player/gun/gun_model.glb" id="1_t3162"]
+[ext_resource type="Texture2D" uid="uid://b8v5xrfu6dy82" path="res://components/player/reticle.png" id="3_ph1f6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lcrh2"]
 
@@ -20,3 +21,21 @@ transform = Transform3D(-0.299589, 0, 0.0157008, 0, 0.3, 0, -0.0157008, 0, -0.29
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00816, 0)
 shape = SubResource("CapsuleShape3D_lcrh2")
+
+[node name="Reticle" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -16.0
+offset_right = 133.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_ph1f6")
+expand_mode = 1

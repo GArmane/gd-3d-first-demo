@@ -96,16 +96,18 @@ use_collision = true
 size = Vector3(5.9, 2, 3)
 material = SubResource("StandardMaterial3D_qg4lo")
 
-[node name="Player" parent="." instance=ExtResource("3_dsxku")]
+[node name="Spawners" type="Node3D" parent="."]
 
-[node name="MobSpawner3D" parent="." instance=ExtResource("4_qg4lo")]
+[node name="MobSpawner3D" parent="Spawners" instance=ExtResource("4_qg4lo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -18)
 mob = ExtResource("3_qg4lo")
 
-[node name="MobSpawner3D2" parent="." instance=ExtResource("4_qg4lo")]
+[node name="MobSpawner3D2" parent="Spawners" instance=ExtResource("4_qg4lo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 2.5, -13)
 mob = ExtResource("3_qg4lo")
 
-[node name="MobSpawner3D3" parent="." instance=ExtResource("4_qg4lo")]
+[node name="MobSpawner3D3" parent="Spawners" instance=ExtResource("4_qg4lo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.5, 6.3)
 mob = ExtResource("3_qg4lo")
+
+[node name="Player" parent="." instance=ExtResource("3_dsxku")]

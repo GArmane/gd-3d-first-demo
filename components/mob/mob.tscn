@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dksxgmmnme2us"]
+
+[ext_resource type="Script" uid="uid://o7dveodhuskt" path="res://components/mob/mob.gd" id="1_6inva"]
+[ext_resource type="PackedScene" uid="uid://d0jxy61l45s43" path="res://components/mob/bat/bat.tscn" id="1_41dmu"]
+[ext_resource type="Texture2D" uid="uid://dh04agftxit2w" path="res://components/mob/bat/bat_model_bat_palette.png" id="3_ki168"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03w4p"]
+resource_local_to_scene = true
+resource_name = "bat_mat"
+cull_mode = 2
+albedo_texture = ExtResource("3_ki168")
+roughness = 0.427273
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6inva"]
+radius = 0.4
+
+[node name="Mob" type="RigidBody3D"]
+collision_layer = 4
+gravity_scale = 0.0
+script = ExtResource("1_6inva")
+
+[node name="Model" parent="." instance=ExtResource("1_41dmu")]
+unique_name_in_owner = true
+
+[node name="Skeleton3D" parent="Model/Armature" index="0"]
+bones/0/position = Vector3(0, 0.0234887, 0)
+bones/1/rotation = Quaternion(0.213544, -0.0253275, -0.616841, 0.757143)
+bones/2/rotation = Quaternion(0.167209, 0.0767919, 0.410241, 0.893222)
+bones/3/rotation = Quaternion(0.0921864, 0.0862487, 0.362512, 0.923389)
+bones/4/rotation = Quaternion(0.213544, 0.0253275, 0.616841, 0.757143)
+bones/5/rotation = Quaternion(0.167209, -0.0767919, -0.410241, 0.893222)
+bones/6/rotation = Quaternion(0.0921864, -0.0862487, -0.362512, 0.923389)
+bones/8/rotation = Quaternion(2.9082e-08, 0.625185, 0.780476, 2.58944e-08)
+bones/11/rotation = Quaternion(2.83839e-08, 0.625185, 0.780476, 3.16597e-08)
+
+[node name="bat" parent="Model/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_03w4p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_6inva")
+
+[node name="DeathTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
+
+[editable path="Model"]

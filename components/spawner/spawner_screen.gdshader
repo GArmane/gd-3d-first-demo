@@ -18,12 +18,12 @@ void fragment() {
 
 	float text = 1.0 - texture(text_sampler, scaled_uv * vec2(ratio, 1.0) + vec2(mod(TIME * 0.1, 1.0), 0.0)).x;
 
-	
+
 	ALBEDO = vec3(0.0);
 	SPECULAR = 0.25;
 	ROUGHNESS = 0.45;
-	
-	
+
+
 	EMISSION = mix(screen_color.rgb * text, screen_color.rgb, screen_color.a) * grid * intensity;
-	
+
 }

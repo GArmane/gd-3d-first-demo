@@ -7,6 +7,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lcrh2"]
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_kfe3d")
 camera_sensibility = 0.25
 
@@ -38,9 +40,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -19.0
-offset_top = 3.0
+offset_top = -17.0
 offset_right = 135.0
-offset_bottom = 157.0
+offset_bottom = 137.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)

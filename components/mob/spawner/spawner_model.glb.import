@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://nrui70j553ki"
-path="res://.godot/imported/spawner_model.glb-20292340cf793d2c12c0f4fea5ecad4b.scn"
+uid="uid://b0sw5msuuv4no"
+path="res://.godot/imported/spawner_model.glb-e681075bd859ea6279b3cc9a24fc8d49.scn"
 
 [deps]
 
-source_file="res://components/spawner/spawner_model.glb"
-dest_files=["res://.godot/imported/spawner_model.glb-20292340cf793d2c12c0f4fea5ecad4b.scn"]
+source_file="res://components/mob/spawner/spawner_model.glb"
+dest_files=["res://.godot/imported/spawner_model.glb-e681075bd859ea6279b3cc9a24fc8d49.scn"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dkaps607e2bhx"
-path="res://.godot/imported/mob_take_damage.wav-96f33b56d70fdc30ed937b2af0815799.sample"
+path="res://.godot/imported/mob_take_damage.wav-0b8a0d811cf0669b235136658f5d0549.sample"
 
 [deps]
 
-source_file="res://assets/mob/mob_take_damage.wav"
-dest_files=["res://.godot/imported/mob_take_damage.wav-96f33b56d70fdc30ed937b2af0815799.sample"]
+source_file="res://components/mob/mob_take_damage.wav"
+dest_files=["res://.godot/imported/mob_take_damage.wav-0b8a0d811cf0669b235136658f5d0549.sample"]
 
 [params]
 

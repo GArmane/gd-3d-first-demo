@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg43al4cgwv4e"]
+[gd_scene load_steps=8 format=3 uid="uid://dg43al4cgwv4e"]
 
 [ext_resource type="Script" uid="uid://bp34r0cxx0dx6" path="res://levels/dev/base_dev.gd" id="1_dbxkx"]
 [ext_resource type="Texture2D" uid="uid://bmmtcrq0u6bxp" path="res://levels/dev/dev_002/checkboard.png" id="2_jus4y"]
 [ext_resource type="PackedScene" uid="uid://bhbsvyf18g3fd" path="res://components/player/player.tscn" id="3_dsxku"]
+[ext_resource type="PackedScene" uid="uid://dksxgmmnme2us" path="res://components/mob/mob.tscn" id="3_qg4lo"]
 
 [sub_resource type="Environment" id="Environment_dsxku"]
 background_mode = 1
@@ -39,6 +40,7 @@ script = ExtResource("1_dbxkx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 0, 10, 11)
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dsxku")
@@ -94,3 +96,6 @@ size = Vector3(5.9, 2, 3)
 material = SubResource("StandardMaterial3D_qg4lo")
 
 [node name="Player" parent="." instance=ExtResource("3_dsxku")]
+
+[node name="Mob" parent="." instance=ExtResource("3_qg4lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -17)

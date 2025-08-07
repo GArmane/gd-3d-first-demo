@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dksxgmmnme2us"]
+
+[ext_resource type="Script" uid="uid://o7dveodhuskt" path="res://components/mob/mob.gd" id="1_6inva"]
+[ext_resource type="PackedScene" uid="uid://d0jxy61l45s43" path="res://components/mob/bat/bat.tscn" id="1_41dmu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6inva"]
+radius = 0.4
+
+[node name="Mob" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_6inva")
+
+[node name="Model" parent="." instance=ExtResource("1_41dmu")]
+unique_name_in_owner = true
+
+[node name="Skeleton3D" parent="Model/Armature" index="0"]
+bones/0/position = Vector3(0, 0.00595546, 0)
+bones/1/rotation = Quaternion(0.0307474, 0.128479, -0.69007, 0.711584)
+bones/2/rotation = Quaternion(0.044491, 0.0148523, 0.311897, 0.948958)
+bones/3/rotation = Quaternion(0.126617, 0.0906498, 0.302319, 0.940401)
+bones/4/rotation = Quaternion(0.0307474, -0.128479, 0.69007, 0.711584)
+bones/5/rotation = Quaternion(0.044491, -0.0148523, -0.311897, 0.948958)
+bones/6/rotation = Quaternion(0.126617, -0.0906498, -0.302319, 0.940401)
+bones/8/rotation = Quaternion(3.84251e-08, 0.702774, 0.711413, 2.26681e-08)
+bones/11/rotation = Quaternion(2.13669e-08, 0.702774, 0.711413, 3.5245e-08)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_6inva")
+
+[editable path="Model"]

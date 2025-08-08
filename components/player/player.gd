@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		_shoot()
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * camera_sensibility
 		%Camera3D.rotation_degrees.x -= event.relative.y * camera_sensibility

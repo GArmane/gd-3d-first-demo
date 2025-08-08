@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8v5xrfu6dy82"
-path="res://.godot/imported/reticle.png-c3b9767d8fda0663e081661590fc0a33.ctex"
+path="res://.godot/imported/reticle.png-b9ceb4fdf1f49f0866a645b496e38e84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/player/reticle.png"
-dest_files=["res://.godot/imported/reticle.png-c3b9767d8fda0663e081661590fc0a33.ctex"]
+source_file="res://ui/reticle.png"
+dest_files=["res://.godot/imported/reticle.png-b9ceb4fdf1f49f0866a645b496e38e84.ctex"]
 
 [params]
 

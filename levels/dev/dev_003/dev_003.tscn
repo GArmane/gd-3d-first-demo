@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dg43al4cgwv4e"]
+[gd_scene load_steps=10 format=3 uid="uid://dg43al4cgwv4e"]
 
 [ext_resource type="Script" uid="uid://bp34r0cxx0dx6" path="res://levels/dev/base_dev.gd" id="1_dbxkx"]
 [ext_resource type="Texture2D" uid="uid://bmmtcrq0u6bxp" path="res://levels/dev/dev_002/checkboard.png" id="2_jus4y"]
 [ext_resource type="PackedScene" uid="uid://bhbsvyf18g3fd" path="res://components/player/player.tscn" id="3_dsxku"]
 [ext_resource type="PackedScene" uid="uid://bhwy15nlcf77i" path="res://components/mob/mob.tscn" id="3_qg4lo"]
 [ext_resource type="PackedScene" uid="uid://rxmg54xu1c7k" path="res://components/spawner/mob_spawner_3d.tscn" id="4_qg4lo"]
+[ext_resource type="PackedScene" uid="uid://bot1h62knwahd" path="res://ui/hud.tscn" id="6_gi4sw"]
 
 [sub_resource type="Environment" id="Environment_dsxku"]
 background_mode = 1
@@ -45,6 +46,9 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dsxku")
+
+[node name="HUD" parent="." instance=ExtResource("6_gi4sw")]
+unique_name_in_owner = true
 
 [node name="Geometry" type="Node3D" parent="."]
 
@@ -103,11 +107,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -18)
 mob = ExtResource("3_qg4lo")
 
 [node name="MobSpawner3D2" parent="Spawners" instance=ExtResource("4_qg4lo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 2.5, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 2.5, -18)
 mob = ExtResource("3_qg4lo")
 
 [node name="MobSpawner3D3" parent="Spawners" instance=ExtResource("4_qg4lo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.5, 6.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 2.5, 6)
 mob = ExtResource("3_qg4lo")
 
 [node name="Player" parent="." instance=ExtResource("3_dsxku")]
+
+[connection signal="mob_spawned" from="Spawners/MobSpawner3D" to="." method="_on_mob_spawner_3d_mob_spawned"]
+[connection signal="mob_spawned" from="Spawners/MobSpawner3D2" to="." method="_on_mob_spawner_3d_mob_spawned"]
+[connection signal="mob_spawned" from="Spawners/MobSpawner3D3" to="." method="_on_mob_spawner_3d_mob_spawned"]

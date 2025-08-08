@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://jvnbftghahty"]
 
 [ext_resource type="Shader" uid="uid://dhuj314m3wv1c" path="res://components/spawner/spawner_screen.gdshader" id="1_3sboa"]
-[ext_resource type="Texture2D" uid="uid://dlim48v6j6eds" path="res://components/spawner/spawner_text.png" id="2_871b8"]
+[ext_resource type="Texture2D" uid="uid://d0tijvlhol66v" path="res://components/spawner/spawner_text.png" id="2_871b8"]
 
 [resource]
 render_priority = 0

@@ -1,9 +1,13 @@
-extends RigidBody3D
+class_name Mob extends RigidBody3D
 
 
 @onready var player: Player = get_node("/root/World/Player")
 var _speed: int = randi_range(2, 5)
 var _health:int = 3
+
+
+signal died
+
 
 func take_damage() -> void:
 	if _health <= 0: return
@@ -17,6 +21,7 @@ func take_damage() -> void:
 		var random_upward_force := Vector3.UP * randf_range(1.0, 5.0)
 		apply_central_impulse(opposite_dir_to_player * 10.0 + random_upward_force)
 		%DeathTimer.start()
+		died.emit()
 
 
 func _physics_process(_delta: float) -> void:

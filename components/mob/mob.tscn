@@ -23,15 +23,15 @@ script = ExtResource("1_6inva")
 unique_name_in_owner = true
 
 [node name="Skeleton3D" parent="Model/Armature" index="0"]
-bones/0/position = Vector3(0, 0.0234887, 0)
-bones/1/rotation = Quaternion(0.213544, -0.0253275, -0.616841, 0.757143)
-bones/2/rotation = Quaternion(0.167209, 0.0767919, 0.410241, 0.893222)
-bones/3/rotation = Quaternion(0.0921864, 0.0862487, 0.362512, 0.923389)
-bones/4/rotation = Quaternion(0.213544, 0.0253275, 0.616841, 0.757143)
-bones/5/rotation = Quaternion(0.167209, -0.0767919, -0.410241, 0.893222)
-bones/6/rotation = Quaternion(0.0921864, -0.0862487, -0.362512, 0.923389)
-bones/8/rotation = Quaternion(2.9082e-08, 0.625185, 0.780476, 2.58944e-08)
-bones/11/rotation = Quaternion(2.83839e-08, 0.625185, 0.780476, 3.16597e-08)
+bones/0/position = Vector3(0, 0.0236, 0)
+bones/1/rotation = Quaternion(0.202593, -0.0186238, -0.625529, 0.753209)
+bones/2/rotation = Quaternion(0.173102, 0.0781389, 0.404115, 0.894774)
+bones/3/rotation = Quaternion(0.112611, 0.0946476, 0.362958, 0.920121)
+bones/4/rotation = Quaternion(0.202593, 0.0186238, 0.625529, 0.753209)
+bones/5/rotation = Quaternion(0.173102, -0.0781389, -0.404115, 0.894774)
+bones/6/rotation = Quaternion(0.112611, -0.0946476, -0.362958, 0.920121)
+bones/8/rotation = Quaternion(3.44322e-08, 0.637609, 0.77036, 2.56731e-08)
+bones/11/rotation = Quaternion(2.6746e-08, 0.637609, 0.77036, 3.20033e-08)
 
 [node name="bat" parent="Model/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_03w4p")

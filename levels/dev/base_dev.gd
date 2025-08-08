@@ -1,8 +1,16 @@
 extends Node3D
 
 
+var _game_score: int = 0
+
+
 func _ready() -> void:
 	_toggle_mouse_mode()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEvent and event.is_action_pressed("ui_cancel"):
+		_toggle_mouse_mode()
 
 
 func _toggle_mouse_mode() -> void:
@@ -12,6 +20,10 @@ func _toggle_mouse_mode() -> void:
 	Input.set_mouse_mode(mode)
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEvent and event.is_action_pressed("ui_cancel"):
-		_toggle_mouse_mode()
+func _increase_score() -> void:
+	_game_score += 1
+	%HUD.set_score(_game_score)
+
+
+func _on_mob_spawner_3d_mob_spawned(mob: Mob) -> void:
+	mob.died.connect(_increase_score)

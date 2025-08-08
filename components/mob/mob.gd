@@ -14,12 +14,14 @@ func take_damage() -> void:
 
 	_health -= 1
 	%Model.hurt()
+	%DamageSound.play()
 	if _health <= 0:
 		set_physics_process(false)
 		gravity_scale = 1.0
 		var opposite_dir_to_player := global_position.direction_to(player.global_position) * -1.0
 		var random_upward_force := Vector3.UP * randf_range(1.0, 5.0)
 		apply_central_impulse(opposite_dir_to_player * 10.0 + random_upward_force)
+		%DeathSound.play()
 		%DeathTimer.start()
 		died.emit()
 

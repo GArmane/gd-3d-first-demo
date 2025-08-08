@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhbsvyf18g3fd"]
+[gd_scene load_steps=5 format=3 uid="uid://bhbsvyf18g3fd"]
 
 [ext_resource type="Script" uid="uid://dqcs3pwtk6ok3" path="res://components/player/player.gd" id="1_kfe3d"]
 [ext_resource type="PackedScene" uid="uid://iwlltlnadug2" path="res://components/player/gun/gun_model.glb" id="1_t3162"]
+[ext_resource type="AudioStream" uid="uid://dam857w6sldhw" path="res://components/player/gun/gun_shoot.wav" id="2_ph1f6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lcrh2"]
 
@@ -10,6 +11,10 @@ collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_kfe3d")
 camera_sensibility = 0.25
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_ph1f6")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true

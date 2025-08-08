@@ -13,7 +13,7 @@ func _shoot() -> void:
 	var bullet = BULLED_3D.instantiate()
 	%GunBulletSpawnPoint.add_child(bullet)
 	bullet.global_transform = %GunBulletSpawnPoint.global_transform
-	
+	%AudioStreamPlayer.play()
 	%GunShotTimer.start()
 
 

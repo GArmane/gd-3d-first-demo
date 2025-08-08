@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dg43al4cgwv4e"]
+[gd_scene load_steps=11 format=3 uid="uid://dg43al4cgwv4e"]
 
 [ext_resource type="Script" uid="uid://bp34r0cxx0dx6" path="res://levels/dev/base_dev.gd" id="1_dbxkx"]
 [ext_resource type="Texture2D" uid="uid://bmmtcrq0u6bxp" path="res://levels/dev/dev_002/checkboard.png" id="2_jus4y"]
@@ -36,6 +36,8 @@ uv1_triplanar = true
 albedo_color = Color(0.784314, 0.72549, 0.133333, 1)
 albedo_texture = ExtResource("2_jus4y")
 uv1_triplanar = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gi4sw"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_dbxkx")
@@ -100,6 +102,15 @@ use_collision = true
 size = Vector3(5.9, 2, 3)
 material = SubResource("StandardMaterial3D_qg4lo")
 
+[node name="KillPlane" type="Area3D" parent="Geometry"]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/KillPlane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+shape = SubResource("WorldBoundaryShape3D_gi4sw")
+
 [node name="Spawners" type="Node3D" parent="."]
 
 [node name="MobSpawner3D" parent="Spawners" instance=ExtResource("4_qg4lo")]
@@ -116,6 +127,7 @@ mob = ExtResource("3_qg4lo")
 
 [node name="Player" parent="." instance=ExtResource("3_dsxku")]
 
+[connection signal="body_entered" from="Geometry/KillPlane" to="." method="_on_kill_plane_body_entered"]
 [connection signal="mob_spawned" from="Spawners/MobSpawner3D" to="." method="_on_mob_spawner_3d_mob_spawned"]
 [connection signal="mob_spawned" from="Spawners/MobSpawner3D2" to="." method="_on_mob_spawner_3d_mob_spawned"]
 [connection signal="mob_spawned" from="Spawners/MobSpawner3D3" to="." method="_on_mob_spawner_3d_mob_spawned"]

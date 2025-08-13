@@ -23,7 +23,6 @@ func take_damage() -> void:
 		apply_central_impulse(opposite_dir_to_player * 10.0 + random_upward_force)
 		%DeathSound.play()
 		%DeathTimer.start()
-		died.emit()
 
 
 func _physics_process(_delta: float) -> void:
@@ -35,3 +34,4 @@ func _physics_process(_delta: float) -> void:
 
 func _on_death_timer_timeout() -> void:
 	queue_free()
+	died.emit()

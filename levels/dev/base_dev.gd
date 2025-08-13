@@ -1,6 +1,7 @@
 extends Node3D
 
 
+const _MOB_SPAWN_VFX = preload("res://components/mob/smoke_puff/smoke_puff.tscn")
 var _game_score: int = 0
 
 
@@ -25,8 +26,18 @@ func _increase_score() -> void:
 	%HUD.set_score(_game_score)
 
 
+func _spawn_smoke_vfx(mob: Mob) -> void:
+	var vfx = _MOB_SPAWN_VFX.instantiate()
+	add_child(vfx)
+	vfx.global_position = mob.global_position
+
+
 func _on_mob_spawner_3d_mob_spawned(mob: Mob) -> void:
-	mob.died.connect(_increase_score)
+	mob.died.connect(func ():
+		_increase_score()
+		_spawn_smoke_vfx(mob)
+	)
+	_spawn_smoke_vfx(mob)
 
 
 func _on_kill_plane_body_entered(body: Node3D) -> void:

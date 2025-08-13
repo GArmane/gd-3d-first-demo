@@ -25,19 +25,19 @@ script = ExtResource("1_6inva")
 unique_name_in_owner = true
 
 [node name="Skeleton3D" parent="Model/Armature" index="0"]
-bones/0/position = Vector3(0, 0.0200293, 0)
-bones/1/rotation = Quaternion(0.121092, 0.043211, -0.668603, 0.732421)
-bones/2/rotation = Quaternion(0.146194, 0.0576369, 0.361978, 0.918846)
-bones/3/rotation = Quaternion(0.171478, 0.114726, 0.342778, 0.916481)
-bones/4/rotation = Quaternion(0.121092, -0.043211, 0.668603, 0.732421)
-bones/5/rotation = Quaternion(0.146194, -0.0576369, -0.361978, 0.918846)
-bones/6/rotation = Quaternion(0.171478, -0.114726, -0.342778, 0.916481)
+bones/0/position = Vector3(0, -0.0105672, 0)
+bones/1/rotation = Quaternion(0.0939198, 0.0717136, -0.606675, 0.786118)
+bones/2/rotation = Quaternion(-0.0778932, -0.0291144, 0.352781, 0.932004)
+bones/3/rotation = Quaternion(-0.178438, 0.000331976, 0.260956, 0.948716)
+bones/4/rotation = Quaternion(0.0939198, -0.0717136, 0.606675, 0.786118)
+bones/5/rotation = Quaternion(-0.0778932, 0.0291144, -0.352781, 0.932004)
+bones/6/rotation = Quaternion(-0.178438, -0.000331976, -0.260956, 0.948716)
 bones/7/position = Vector3(0.130992, -0.227392, -0.0878515)
 bones/7/rotation = Quaternion(0.261968, 0.0834552, 0.265751, 0.924005)
-bones/8/rotation = Quaternion(3.34609e-08, 0.689816, 0.723985, 2.18104e-08)
+bones/8/rotation = Quaternion(2.84263e-08, 0.542441, 0.840094, 2.02176e-08)
 bones/10/position = Vector3(-0.130992, -0.227392, -0.0878515)
 bones/10/rotation = Quaternion(0.261968, -0.0834552, -0.265751, 0.924005)
-bones/11/rotation = Quaternion(2.50132e-08, 0.689816, 0.723985, 3.69141e-08)
+bones/11/rotation = Quaternion(2.52265e-08, 0.542441, 0.840094, 4.39632e-08)
 
 [node name="bat" parent="Model/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_03w4p")
@@ -47,7 +47,7 @@ shape = SubResource("SphereShape3D_6inva")
 
 [node name="DeathTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 
 [node name="DamageSound" type="AudioStreamPlayer3D" parent="."]
